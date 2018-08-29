@@ -3,6 +3,7 @@ Documentation    A demo suite
 Library  Selenium2Library
 Resource  Keywords/UI_keywords.robot
 Suite Setup  open portal  https://www.copaair.com/en/web/us
+Suite Teardown  close all browsers
 
 *** Test Cases ***
 Demo UI test
