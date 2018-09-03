@@ -3,12 +3,13 @@ open portal
     [Arguments]  ${url}
     open browser  url=${url}  browser=chrome
     wait until page contains element  //button[@id="flightBooking_search"]
-    maximize browser window
+    set window size  1920  1080
 
 select depatrure country
    [Arguments]  ${dep_cnt_id}  ${dep_aip_id}
     click element  //button[@id="id_openOriginsModal"]
     select country and airport  ${dep_cnt_id}  ${dep_aip_id}
+    capture page screenshot
 
 
 select destrination country
