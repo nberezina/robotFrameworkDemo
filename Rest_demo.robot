@@ -11,9 +11,9 @@ Simple REST API test
     ${header} =  create default header
     ${resp} =  send get request  connection=${connection}  uri=/todos/1  header=${header}  exp_status_code=200
     #
-    ${rand_number}=    Evaluate    random.sample(range(1, 3), 1)    random
-    check json property  ${resp}  userId  ${rand_number[0]}
-#    check json property  ${resp}  userId  1
+#    ${rand_number}=    Evaluate    random.sample(range(1, 3), 1)    random
+#    check json property  ${resp}  userId  ${rand_number[0]}
+    check json property  ${resp}  userId  1
     check json property  ${resp}  id  1
     check json property  ${resp}  completed  False
 
